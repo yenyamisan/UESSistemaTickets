@@ -14,5 +14,8 @@ namespace UESTicketsProject.Data
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Departamento> Departamentos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Ticket> Tickets{ get; set; }
+        public  DbSet<Prioridad> Prioridades { get; set; }
+        public  DbSet<Estatus> Estatuses { get; set; }
     }
 }

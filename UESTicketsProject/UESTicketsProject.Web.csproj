@@ -156,6 +156,7 @@
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\SmDependencyResolver.cs" />
     <Compile Include="Global.asax.cs">
@@ -348,6 +349,7 @@
     <Content Include="Views\Admin\ListarRoles.cshtml" />
     <Content Include="Views\Admin\ListarUsuarios.cshtml" />
     <Content Include="Views\Admin\AgregarNuevoUsuario.cshtml" />
+    <Content Include="Views\Usuario\CrearTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
