@@ -1,0 +1,9 @@
+bin
+packages
+obj
+*.suo
+*.user
+Package
+/.vs/config/applicationhost.config
+/.vs/UESTicketsProject/v15/Server/sqlite3
+/UESTicketsProject/Properties/PublishProfiles/stageharestech - Web Deploy.pubxml

@@ -1,0 +1,39 @@
+﻿@model  List<UESTicketsProject.Data.Entities.Departamento>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Roles</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Lista de Roles <a href="@Url.Action("AgregarDepartamento")" class="btn btn-primary">Crear Nuevo Departamento</a>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul>
+                            @foreach (var r in Model)
+                            {
+                                <li>@r.Nombre</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
