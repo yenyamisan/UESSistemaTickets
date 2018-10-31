@@ -23,6 +23,7 @@ namespace UESTicketsProject.Data.Services.Impl
         public void CreatNewTicket(NuevoTicket model)
         {
             model.Ticket.EstadoActualId = 1;
+            model.Ticket.FechaCreacion = DateTime.Now;
             _iTicketRepository.Save(model.Ticket);
         }
     }

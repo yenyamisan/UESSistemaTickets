@@ -15,14 +15,16 @@ namespace UESTicketsProject.Controllers
         private readonly IUsuarioRepository _usuarioRepository;
         private readonly IEstatusesRepository _estatusesRepository;
         private readonly IPrioridadRepository _prioridadRepository;
+        private readonly ITicketRepository _ticketRepository;
         private readonly ITicketService _ticketService;
 
-        public UsuarioController(IUsuarioRepository usuarioRepository,IEstatusesRepository estatusesRepository, IPrioridadRepository prioridadRepository,ITicketService ticketService)
+        public UsuarioController(IUsuarioRepository usuarioRepository,ITicketRepository ticketRepository,IEstatusesRepository estatusesRepository, IPrioridadRepository prioridadRepository,ITicketService ticketService)
         {
             _usuarioRepository = usuarioRepository;
             _estatusesRepository = estatusesRepository;
             _prioridadRepository = prioridadRepository;
             _ticketService = ticketService;
+            _ticketRepository = ticketRepository;
         }
         // GET: Usuario
         public ActionResult CrearTicket()
@@ -39,7 +41,14 @@ namespace UESTicketsProject.Controllers
         public ActionResult CrearTicketResponse(NuevoTicket model)
         {
             _ticketService.CreatNewTicket(model);
-            return View();
+            return RedirectToAction("ListarTickets");
         }
+
+        public ActionResult ListarTickets()
+        {
+            var model = _ticketRepository.GetAll().ToList();
+            return View(model);
+        }
+
     }
 }
