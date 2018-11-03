@@ -24,19 +24,18 @@
                                 <th>Reportado por:</th>
                                 <th>Asignado a:</th>
                                 <th>Description</th>
+                                <th>Prioridad</th>
                                 
                             </tr>
-                            
                                 @foreach(var t in Model)
                                 {
                                     <tr>
-                                    <td>@t.FechaCreacion.ToShortDateString()</td>
-                                    <td>@t.Reporter.Nombres</td>
-                                    <td>@t.Assignee.Nombres</td>
-                                        <td>@t.Descripcion</td>                                        
+                                        <td>@t.FechaCreacion.ToShortDateString()</td>
+                                        <td>@t.Reporter.Nombres</td>
+                                        <td>@t.Assignee.Nombres</td>
+                                        <td>@t.Prioridad.Nombre</td>                                        
                                     </tr>
                                 }
-                            
                         </table>
                     </div>
                 </div>
