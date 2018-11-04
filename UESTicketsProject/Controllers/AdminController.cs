@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using UESTicketsProject.Data.Entities;
 using UESTicketsProject.Data.Models;
 using UESTicketsProject.Data.Repositories.Interfaces;
+using UESTicketsProject.Helpers;
 
 namespace UESTicketsProject.Controllers
 {
@@ -75,6 +76,9 @@ namespace UESTicketsProject.Controllers
 
         public ActionResult CrearUsuario(NuevoUsuario model)
         {
+            if (model?.Usuario == null) return RedirectToAction("AgregarNuevoUsuario");
+            model.Usuario.Password = model.Usuario.Password.ToBase64();
+            model.Usuario.Active = true;
             _usurioRepository.Save(model.Usuario);
             return RedirectToAction("ListarUsuarios");
         }

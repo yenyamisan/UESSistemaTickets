@@ -9,5 +9,6 @@ namespace UESTicketsProject.Data.Repositories.Interfaces
 {
     public interface IUsuarioRepository:IRepository<Usuario>
     {
+        Usuario GetByUserName(string username);
     }
 }

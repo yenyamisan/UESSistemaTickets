@@ -7,9 +7,13 @@ using UESTicketsProject.Data.Entities;
 using UESTicketsProject.Data.Models;
 using UESTicketsProject.Data.Repositories.Interfaces;
 using UESTicketsProject.Data.Services;
+using UESTicketsProject.Filters;
+using UESTicketsProject.Helpers;
+using UESTicketsProject.Models;
 
 namespace UESTicketsProject.Controllers
 {
+    [UserValiationFilter]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepository _usuarioRepository;
@@ -26,7 +30,17 @@ namespace UESTicketsProject.Controllers
             _ticketService = ticketService;
             _ticketRepository = ticketRepository;
         }
-        // GET: Usuario
+
+        public ActionResult Dashboard()
+        {
+            var usuario = _usuarioRepository.Get(int.Parse(Session["UId"].ToString().FromBase64()));
+            var model = new UsuarioDashboardModel
+            {
+                Usuario = usuario,
+                Tickets = _ticketRepository.TicketsByUser(usuario.Id)
+            };
+            return View(model);
+        }
         public ActionResult CrearTicket()
         {
             var model = new NuevoTicket

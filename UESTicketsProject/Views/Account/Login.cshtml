@@ -1,0 +1,21 @@
+﻿@model UESTicketsProject.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<div>
+    @using (Html.BeginForm("LoginResponse", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group" >
+            <label>Usuario:</label>
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+        </div>
+        <div class="form-group" >
+            <label>Contraseña:</label>
+            @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+        </div>                  
+        <button type="submit" class="btn btn-default">Iniciar Sesión</button>
+    }
+</div>
+
