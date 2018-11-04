@@ -1,6 +1,6 @@
 ﻿@model UESTicketsProject.Models.UsuarioDashboardModel
 @{
-    Layout = "~/Views/Shared/_UsuarioLayout.cshtml";
+    Layout = "~/Views/Shared/_ReporterLayout.cshtml";
 }
 
 <div class="row">
@@ -28,8 +28,8 @@
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;">Titulo</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;">Fecha de reporte</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 206px;">Prioridad</th>
-                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 189px;">Reportado por</th>
-                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 147px;">Departamento</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 189px;">Asignado a</th>
+                                                
                                             </tr>
                                             @foreach (var t in Model.Tickets)
                                             {
@@ -37,8 +37,15 @@
                                                     <td>@t.Titulo</td>
                                                     <td>@t.FechaCreacion.ToShortDateString()</td>
                                                     <td>@t.Prioridad.Nombre</td>
-                                                    <td>@t.Reporter.Nombres</td>
-                                                    <td>@t.Reporter.Departamento.Nombre</td>
+                                                    @if (t.Assignee != null)
+                                                    {
+                                                        <td>@t.Assignee.Nombres</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>Sin Asignar</td>
+                                                    }
+
                                                 </tr>
                                             }
                                         </thead>

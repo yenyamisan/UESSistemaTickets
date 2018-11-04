@@ -10,5 +10,6 @@ namespace UESTicketsProject.Models
     {
         public Usuario Usuario { get; set; }
         public List<Ticket> Tickets { get; set; }
+        public string Estatus { get; set; }
     }
 }

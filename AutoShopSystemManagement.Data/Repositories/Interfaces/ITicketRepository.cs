@@ -6,5 +6,7 @@ namespace UESTicketsProject.Data.Repositories.Interfaces
     public interface ITicketRepository:IRepository<Ticket>
     {
         List<Ticket> TicketsByUser(int userId);
+        List<Ticket> TicketsReporterByUser(int userId);
+
     }
 }

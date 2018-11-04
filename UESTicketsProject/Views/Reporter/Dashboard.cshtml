@@ -1,6 +1,6 @@
 ﻿@model UESTicketsProject.Models.UsuarioDashboardModel
 @{
-    Layout = "~/Views/Shared/_UsuarioLayout.cshtml";
+    Layout = "~/Views/Shared/_ReporterLayout.cshtml";
 }
 
 <div class="row">
@@ -19,12 +19,12 @@
                         <i class="fa fa-comments fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId==6)</div>
+                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId == 6)</div>
                         <div>Tickets completados</div>
                     </div>
                 </div>
             </div>
-            <a href="@Url.Action("ListarTickets","Usuario")?tipo=Completados">
+            <a href="@Url.Action("ListarTickets","Reporter")?tipo=Completados">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -41,12 +41,12 @@
                         <i class="fa fa-tasks fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId==2)</div>
+                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId == 2)</div>
                         <div>Tickets en progreso</div>
                     </div>
                 </div>
             </div>
-            <a href="@Url.Action("ListarTickets","Usuario")?tipo=Enprogreso">
+            <a href="@Url.Action("ListarTickets","Reporter")?tipo=Enprogreso">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <a href="@Url.Action("ListarTickets","Usuario")?tipo=Pruebas">
+            <a href="@Url.Action("ListarTickets","Reporter")?tipo=Pruebas">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            <a href="@Url.Action("ListarTickets","Usuario")?tipo=Abiertos">
+            <a href="@Url.Action("ListarTickets","Reporter")?tipo=Abiertos">
                 <div class="panel-footer">
                     <span class="pull-left">Ir</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

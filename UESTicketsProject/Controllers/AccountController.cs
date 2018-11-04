@@ -63,6 +63,10 @@ namespace UESTicketsProject.Controllers
             var x = _loginService.Login(model, out usuario);
             if (!x) return View("Login");
             LoginSuccess(usuario);
+            if(usuario.RolId==4)
+                return RedirectToAction("Dashboard", "Reporter");
+            if(usuario.RolId==1 || usuario.RolId==2)
+                return RedirectToAction("ListarUsuarios", "Admin");
             return RedirectToAction("Dashboard","Usuario");
         }
     }

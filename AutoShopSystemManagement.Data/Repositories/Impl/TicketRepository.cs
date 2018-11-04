@@ -14,5 +14,10 @@ namespace UESTicketsProject.Data.Repositories.Impl
         {
             return context.Tickets.Where(x => x.UsuarioAsignado.HasValue && x.UsuarioAsignado.Value == userId).ToList();
         }
+
+        public List<Ticket> TicketsReporterByUser(int userId)
+        {
+            return context.Tickets.Where(x => x.UsuarioReporter == userId).ToList();
+        }
     }
 }
