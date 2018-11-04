@@ -1,0 +1,102 @@
+﻿@model UESTicketsProject.Models.UsuarioDashboardModel
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Bienvenido @Model.Usuario.Nombres</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-comments fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId == 6)</div>
+                        <div>Tickets completados</div>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("ListarTickets","Admin")?tipo=Completados">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-tasks fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId == 2)</div>
+                        <div>Tickets en progreso</div>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("ListarTickets","Admin")?tipo=Enprogreso">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-shopping-cart fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId == 3)</div>
+                        <div>Tickets en pruebas</div>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("ListarTickets","Admin")?tipo=Pruebas">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-support fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@Model.Tickets.Count(x => x.Assignee ==null)</div>
+                        <div>Tickets sin asignar</div>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("ListarTickets","Admin")?tipo=UnAssigned">
+                <div class="panel-footer">
+                    <span class="pull-left">Ir</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

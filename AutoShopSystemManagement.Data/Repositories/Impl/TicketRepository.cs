@@ -19,5 +19,12 @@ namespace UESTicketsProject.Data.Repositories.Impl
         {
             return context.Tickets.Where(x => x.UsuarioReporter == userId).ToList();
         }
+
+        public void AssingUser(int userId, int ticketId)
+        {
+            var ticket = Get(ticketId);
+            ticket.UsuarioAsignado = userId;
+            Update(ticket,ticketId);
+        }
     }
 }

@@ -66,7 +66,7 @@ namespace UESTicketsProject.Controllers
             if(usuario.RolId==4)
                 return RedirectToAction("Dashboard", "Reporter");
             if(usuario.RolId==1 || usuario.RolId==2)
-                return RedirectToAction("ListarUsuarios", "Admin");
+                return RedirectToAction("Dashboard", "Admin");
             return RedirectToAction("Dashboard","Usuario");
         }
     }

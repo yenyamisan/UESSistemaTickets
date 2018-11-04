@@ -10,13 +10,13 @@ using UESTicketsProject.Services.Impl;
 
 namespace UESTicketsProject.Filters
 {
-    public class UserValiationFilter: ActionFilterAttribute
+    public class AdminValiationFilter: ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             var uId=filterContext.HttpContext.Session.Contents["UId"];
             var rolId= filterContext.HttpContext.Session.Contents["RoleId"];
-            if (uId == null || rolId == null || (rolId.ToString().FromBase64() != "3" &&  rolId.ToString().FromBase64() != "5"))
+            if (uId == null || rolId == null || (rolId.ToString().FromBase64() != "1" && rolId.ToString().FromBase64() != "2"))
             {
                 filterContext.Result = new RedirectToRouteResult(
                     new RouteValueDictionary(new { controller = "Account", action = "Login" })

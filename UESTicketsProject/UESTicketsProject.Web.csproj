@@ -162,6 +162,7 @@
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\SmDependencyResolver.cs" />
     <Compile Include="Filters\ReporterValidationFilter.cs" />
+    <Compile Include="Filters\AdminValidationFilter.cs" />
     <Compile Include="Filters\UserValiationFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -367,6 +368,9 @@
     <Content Include="Views\Reporter\Dashboard.cshtml" />
     <Content Include="Views\Shared\_ReporterLayout.cshtml" />
     <Content Include="Views\Reporter\ListarTickets.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Admin\ListarTickets.cshtml" />
+    <Content Include="Views\Admin\AsignarTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
