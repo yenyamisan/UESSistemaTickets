@@ -17,6 +17,7 @@ namespace UESTicketsProject.Data.Entities
         public DateTime FechaCreacion { get; set; }
         public DateTime? FechaFinalizacion { get; set; }
         public string Descripcion { get; set; }
+        public string Titulo { get; set; }
 
         [ForeignKey("UsuarioReporter")]
         public virtual Usuario Reporter { get; set; }

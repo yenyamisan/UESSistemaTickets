@@ -60,7 +60,12 @@ namespace UESTicketsProject.Controllers
 
         public ActionResult ListarTickets()
         {
-            var model = _ticketRepository.GetAll().ToList();
+            var usuario = _usuarioRepository.Get(int.Parse(Session["UId"].ToString().FromBase64()));
+            var model = new UsuarioDashboardModel
+            {
+                Usuario = usuario,
+                Tickets = _ticketRepository.TicketsByUser(usuario.Id)
+            };
             return View(model);
         }
 

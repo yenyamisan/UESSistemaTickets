@@ -11,40 +11,92 @@
 </div>
 <!-- /.row -->
 <div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
             <div class="panel-heading">
-                Lista de tickets assignados a ti:
-            </div>
-            <div class="panel-body">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <table>
-                            <tr>
-                                <th>Fecha de creación</th>
-                                <th>Prioridad</th>
-                                <th>Reportado por</th>
-                                <th>Departamento</th>
-                            </tr>
-                            @foreach (var t in Model.Tickets)
-                            {
-                                <tr>
-                                    <td>@t.FechaCreacion.ToShortDateString()</td>
-                                    <td>@t.Prioridad.Nombre</td>
-                                    <td>@t.Reporter.Nombres</td>
-                                    <td>@t.Reporter.Departamento.Nombre</td>
-                                </tr>
-                            }
-
-                        </table>
+                    <div class="col-xs-3">
+                        <i class="fa fa-comments fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId==6)</div>
+                        <div>Tickets completados</div>
                     </div>
                 </div>
-                <!-- /.row (nested) -->
             </div>
-            <!-- /.panel-body -->
+            <a href="#">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
         </div>
-        <!-- /.panel -->
     </div>
-    <!-- /.col-lg-12 -->
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-tasks fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId==2)</div>
+                        <div>Tickets en progreso</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-shopping-cart fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId == 3)</div>
+                        <div>Tickets en pruebas</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-support fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@Model.Tickets.Count(x => x.EstadoActualId == 1)</div>
+                        <div>Tickets sin atender</div>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("ListarTickets","Usuario")">
+                <div class="panel-footer">
+                    <span class="pull-left">Ir</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
-<!-- /.row -->
