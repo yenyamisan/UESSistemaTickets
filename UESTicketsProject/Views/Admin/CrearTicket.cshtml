@@ -1,7 +1,7 @@
 ﻿@model UESTicketsProject.Data.Models.NuevoTicket
 
 @{
-    Layout = "~/Views/Shared/_ReporterLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="row">
@@ -20,7 +20,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-6">
-                        @using (Html.BeginForm("CrearTicketResponse", "Reporter", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        @using (Html.BeginForm("CrearTicketResponse", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
                             @Html.AntiForgeryToken()
                             <div class="form-group">

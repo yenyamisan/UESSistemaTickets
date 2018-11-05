@@ -14,5 +14,6 @@ namespace UESTicketsProject.Data.Models
         public List<Estatus> Estatuses { get; set; }
         public List<Prioridad> Prioridades { get; set; }
         public int ReporterId { get; set; }
+        public Dictionary<int, string> TipoTicket { get; set; }
     }
 }

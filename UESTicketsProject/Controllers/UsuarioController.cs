@@ -41,7 +41,26 @@ namespace UESTicketsProject.Controllers
             };
             return View(model);
         }
-       
+
+        public ActionResult CrearTicket()
+        {
+            var model = new NuevoTicket
+            {
+                Estatuses = _estatusesRepository.GetAll().ToList(),
+                Prioridades = _prioridadRepository.GetAll().ToList(),
+                Usuarios = _usuarioRepository.GetAll().ToList(),
+                TipoTicket = DataHelpers.TipoTicket
+            };
+            return View(model);
+        }
+
+        public ActionResult CrearTicketResponse(NuevoTicket model)
+        {
+            model.ReporterId = SessionHelper.GetUserId();
+            _ticketService.CreatNewTicket(model);
+            return RedirectToAction("Dashboard");
+        }
+
 
         public ActionResult ListarTickets(string tipo)
         {

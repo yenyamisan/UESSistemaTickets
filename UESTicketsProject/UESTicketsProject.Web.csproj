@@ -167,6 +167,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DataHelpers.cs" />
     <Compile Include="Helpers\SecurityHelper.cs" />
     <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -371,6 +372,8 @@
     <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Admin\ListarTickets.cshtml" />
     <Content Include="Views\Admin\AsignarTicket.cshtml" />
+    <Content Include="Views\Usuario\CrearTicket.cshtml" />
+    <Content Include="Views\Admin\CrearTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

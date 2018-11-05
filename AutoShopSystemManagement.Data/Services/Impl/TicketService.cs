@@ -25,6 +25,7 @@ namespace UESTicketsProject.Data.Services.Impl
             model.Ticket.EstadoActualId = 1;
             model.Ticket.FechaCreacion = DateTime.Now;
             model.Ticket.UsuarioReporter = model.ReporterId;
+            model.Ticket.TipoTicket = model.Ticket.TipoTicket;
             _iTicketRepository.Save(model.Ticket);
         }
     }

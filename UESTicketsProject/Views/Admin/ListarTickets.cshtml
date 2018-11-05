@@ -26,6 +26,7 @@
                                         <thead>
                                             <tr role="row">
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;">Titulo</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;">Tipo de Ticket</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;">Fecha de reporte</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 206px;">Prioridad</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 189px;">Reportado por</th>
@@ -37,6 +38,14 @@
                                                 <tr>
                                                     <td>@t.Titulo</td>
                                                     <td>@t.FechaCreacion.ToShortDateString()</td>
+                                                    @if (t.TipoTicket == 1)
+                                                    {
+                                                        <td>Software</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>Hardware</td>
+                                                    }
                                                     <td>@t.Prioridad.Nombre</td>
                                                     <td>@t.Reporter.Nombres</td>
                                                     <td>@t.Reporter.Departamento.Nombre</td>
