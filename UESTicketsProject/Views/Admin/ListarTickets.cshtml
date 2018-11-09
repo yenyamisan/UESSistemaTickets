@@ -26,6 +26,7 @@
                                         <thead>
                                             <tr role="row">
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;background-color:seagreen;color:aliceblue">Titulo</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;">Tipo de Ticket</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;background-color:seagreen;color:aliceblue">Fecha de reporte</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 206px;background-color:seagreen;color:aliceblue">Prioridad</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 189px;background-color:seagreen;color:aliceblue">Reportado por</th>
@@ -37,6 +38,14 @@
                                             {
                                                 <tr>
                                                     <td style="color:seagreen">@t.Titulo</td>
+                                                    @if (t.TipoTicket == 1)
+                                                    {
+                                                    <td>Software</td>
+                                                    }
+                                                    else
+                                                    {
+                                                    <td>Hardware</td>
+                                                    }
                                                     <td  style="color:seagreen">@t.FechaCreacion.ToShortDateString()</td>
                                                     <td  style="color:seagreen">@t.Prioridad.Nombre</td>
                                                     <td  style="color:seagreen">@t.Reporter.Nombres</td>

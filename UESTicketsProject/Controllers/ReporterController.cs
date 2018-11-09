@@ -47,7 +47,8 @@ namespace UESTicketsProject.Controllers
             {
                 Estatuses = _estatusesRepository.GetAll().ToList(),
                 Prioridades = _prioridadRepository.GetAll().ToList(),
-                Usuarios = _usuarioRepository.GetAll().ToList()
+                Usuarios = _usuarioRepository.GetAll().ToList(),
+                TipoTicket = DataHelpers.TipoTicket
             };
             return View(model);
         }

@@ -1,31 +1,34 @@
 ﻿@model UESTicketsProject.Data.Models.NuevoTicket
 
 @{
-    Layout = "~/Views/Shared/_ReporterLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="row">
-    <div>
-        <h1 class="page-header"  style="color:seagreen">Crear Tickets</h1>
+    <div class="col-lg-12">
+        <h1 class="page-header">Tickets</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
 <div class="row">
     <div class="col-lg-12">
-        <div class="panel panel-body"style="color:seagreen">
-        <div class="panel-body"style="color:seagreen">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Agregar Nuevo Ticket
+            </div>
+            <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-6">
-                        @using (Html.BeginForm("CrearTicketResponse", "Reporter", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        @using (Html.BeginForm("CrearTicketResponse", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
                             @Html.AntiForgeryToken()
                             <div class="form-group">
-                                <label style="color:seagreen">Titulo:</label>
+                                <label>Titulo:</label>
                                 @Html.TextBoxFor(x => x.Ticket.Titulo, new { @class = "form-control" })
                             </div>
                             <div class="form-group">
-                                <label  style="color:seagreen">Description:</label>
+                                <label>Description:</label>
                                 @Html.TextAreaFor(x => x.Ticket.Descripcion, new { @class = "form-control" })
                             </div>
                             <div class="form-group">
@@ -36,8 +39,8 @@
                                 <label>Prioridad:</label>
                                 @Html.DropDownListFor(m => m.Ticket.PrioridadId, new SelectList(Model.Prioridades, "Id", "Nombre"), new { @class = "form-control" })
                             </div>
-                            <button type="submit" class="btn btn-default" style="background-color:seagreen;color:aliceblue"   >Guardar</button>
-                            <button type="reset" class="btn btn-default" style="background-color:seagreen;color:aliceblue">Limpiar</button>
+                            <button type="submit" class="btn btn-default">Guardar</button>
+                            <button type="reset" class="btn btn-default">Limpiar</button>
                         }
 
                     </div>
