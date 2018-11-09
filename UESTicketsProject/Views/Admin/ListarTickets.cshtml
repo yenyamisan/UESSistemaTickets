@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Bienvenido @Model.Usuario.Nombres</h1>
+        <h1 class="panel-green" style="color:seagreen">Bienvenido @Model.Usuario.Nombres</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -13,8 +13,8 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                Lista de tickets assignados a ti: @Model.Estatus
+            <div class="panel-heading"  style="color:seagreen">
+                Lista de tickets: @Model.Estatus
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -25,22 +25,23 @@
                                     <table class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info" style="width: 100%;">
                                         <thead>
                                             <tr role="row">
-                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;">Titulo</th>
-                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;">Fecha de reporte</th>
-                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 206px;">Prioridad</th>
-                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 189px;">Reportado por</th>
-                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 147px;">Departamento</th>
-                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 147px;">Opcion</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;background-color:seagreen;color:aliceblue">Titulo</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;background-color:seagreen;color:aliceblue">Fecha de reporte</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 206px;background-color:seagreen;color:aliceblue">Prioridad</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 189px;background-color:seagreen;color:aliceblue">Reportado por</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 147px;background-color:seagreen;color:aliceblue">Departamento</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 147px;background-color:seagreen;color:aliceblue">Opcion</th>
+                                                
                                             </tr>
                                             @foreach (var t in Model.Tickets)
                                             {
                                                 <tr>
-                                                    <td>@t.Titulo</td>
-                                                    <td>@t.FechaCreacion.ToShortDateString()</td>
-                                                    <td>@t.Prioridad.Nombre</td>
-                                                    <td>@t.Reporter.Nombres</td>
-                                                    <td>@t.Reporter.Departamento.Nombre</td>
-                                                    <td><a href="@Url.Action("AsignarTicket","Admin")?ticketId=@t.Id">Asignar</a></td>
+                                                    <td style="color:seagreen">@t.Titulo</td>
+                                                    <td  style="color:seagreen">@t.FechaCreacion.ToShortDateString()</td>
+                                                    <td  style="color:seagreen">@t.Prioridad.Nombre</td>
+                                                    <td  style="color:seagreen">@t.Reporter.Nombres</td>
+                                                    <td  style="color:seagreen">@t.Reporter.Departamento.Nombre</td>
+                                                    <td  style="color:seagreen"><a href="@Url.Action("AsignarTicket","Admin")?ticketId=@t.Id" style="color:seagreen">Asignar</a></td>
                                                 </tr>
                                             }
                                         </thead>

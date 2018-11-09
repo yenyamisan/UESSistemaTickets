@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\AutoShopSystemManagement.Data",
+    "\\UESTicketsProject",
+    "\\UESTicketsProject\\Views",
+    "\\UESTicketsProject\\Views\\Account",
+    "\\UESTicketsProject\\Views\\Admin",
+    "\\UESTicketsProject\\Views\\Shared",
+    "\\UESTicketsProject\\Views\\Usuario"
+  ],
+  "SelectedNode": "\\UESTicketsProject\\Views\\Usuario\\Dashboard.cshtml",
+  "PreviewInSolutionExplorer": false
+}
