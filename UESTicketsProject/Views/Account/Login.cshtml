@@ -5,22 +5,22 @@
 
 <center style="background-color:seagreen; margin-left:25%; margin-top:15%; width:500px; right:800px" >
    
-    <div style="border:none">
-          <div><h1><label>TICKET SYSTEM</label></h1></div>
+    <div style="border:medium">
+          <div><h1><label style="color:aliceblue">TICKET SYSTEM</label></h1></div>
 
             @using (Html.BeginForm("LoginResponse", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
 
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group">
-                    <label>Usuario:</label>
+                    <label style="color:aliceblue">Usuario:</label>
                     @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
-                    <label>Contraseña:</label>
+                    <label style="color:aliceblue">Contraseña:</label>
                     @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
                 </div>
-                <button type="submit" class="btn btn-default">Iniciar Sesión</button>
+                <button type="submit" class="btn btn-default" style="background-color:aliceblue;color:seagreen">Iniciar Sesión</button>
             }
        
     </div>
