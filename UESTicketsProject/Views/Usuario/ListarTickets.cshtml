@@ -30,6 +30,7 @@
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 206px;background-color:seagreen;color:aliceblue">Prioridad</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 189px;background-color:seagreen;color:aliceblue">Reportado por</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 147px;background-color:seagreen;color:aliceblue">Departamento</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 147px;background-color:seagreen;color:aliceblue">Ver</th>
                                             </tr>
                                             @foreach (var t in Model.Tickets)
                                             {
@@ -39,6 +40,7 @@
                                                     <td>@t.Prioridad.Nombre</td>
                                                     <td>@t.Reporter.Nombres</td>
                                                     <td>@t.Reporter.Departamento.Nombre</td>
+                                                    <td><a href="@Url.Action("VerTicket","Usuario",new{id=t.Id})">Ver</a></td>
                                                 </tr>
                                             }
                                         </thead>

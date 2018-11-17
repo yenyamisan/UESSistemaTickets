@@ -26,5 +26,12 @@ namespace UESTicketsProject.Data.Repositories.Impl
             ticket.UsuarioAsignado = userId;
             Update(ticket,ticketId);
         }
+
+        public void ChangeTicketStatus(int ticketId, int newStatus)
+        {
+            var ticket = Get(ticketId);
+            ticket.EstadoActualId = newStatus;
+            Update(ticket,ticketId);
+        }
     }
 }

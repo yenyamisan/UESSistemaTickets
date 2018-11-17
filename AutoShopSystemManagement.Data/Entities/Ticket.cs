@@ -27,5 +27,8 @@ namespace UESTicketsProject.Data.Entities
         public virtual Usuario Assignee { get; set; }
         [ForeignKey("PrioridadId")]
         public virtual Prioridad Prioridad { get; set; }
+
+        [ForeignKey("EstadoActualId")]
+        public virtual Estatus EstadoActual { get; set; }
     }
 }

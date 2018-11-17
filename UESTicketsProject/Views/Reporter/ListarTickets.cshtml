@@ -14,7 +14,7 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Lista de tickets assignados a ti: @Model.Estatus
+                Lista de tickets reportados por ti: @Model.Estatus
             </div>
             <div class="panel-body glyphicon-text-color">
                 <div class="row">
@@ -29,6 +29,7 @@
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 170px;">Fecha de reporte</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 206px;">Prioridad</th>
                                                 <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 189px;">Asignado a</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 189px;">Ver</th>
                                                 
                                             </tr>
                                             @foreach (var t in Model.Tickets)
@@ -45,6 +46,7 @@
                                                     {
                                                         <td>Sin Asignar</td>
                                                     }
+                                                    <td><a href="@Url.Action("VerTicket","Reporter",new{id=t.Id})">Ver</a></td>
 
                                                 </tr>
                                             }

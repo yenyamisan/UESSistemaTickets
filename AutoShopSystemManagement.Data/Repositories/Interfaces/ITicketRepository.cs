@@ -8,5 +8,6 @@ namespace UESTicketsProject.Data.Repositories.Interfaces
         List<Ticket> TicketsByUser(int userId);
         List<Ticket> TicketsReporterByUser(int userId);
         void AssingUser(int userId, int ticketId);
+        void ChangeTicketStatus(int ticketId, int newStatus);
     }
 }

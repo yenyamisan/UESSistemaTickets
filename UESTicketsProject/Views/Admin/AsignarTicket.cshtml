@@ -24,6 +24,10 @@
                             @Html.AntiForgeryToken()
                             @Html.HiddenFor(x=>x.Ticket.Id)
                             <div class="form-group">
+                                <label>Estado:</label>
+                                <p>@Model.Ticket.EstadoActual.Nombre</p>
+                            </div>
+                            <div class="form-group">
                                 <label>Titulo:</label>
                                 <p>@Model.Ticket.Titulo</p>
                             </div>
@@ -36,8 +40,23 @@
                                 <p>@Model.Ticket.Reporter.Nombres</p>
                             </div>
                             <div class="form-group">
+                                <label>Tipo:</label>
+                                @if (Model.Ticket.TipoTicket == 1)
+                                {
+                                    <p> Software </p>
+                                }
+                                else
+                                {
+                                    <p>Hardware</p>
+                                }
+                            </div>
+                            <div class="form-group">
                                 <label>Asignar a:</label>
                                 @Html.DropDownListFor(m => m.Ticket.UsuarioAsignado, new SelectList(Model.Usuarios, "Id", "Nombres"), new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label>Prioridad:</label>
+                                @Html.DropDownListFor(m => m.Ticket.PrioridadId, new SelectList(Model.Prioridades, "Id", "Nombre"), new { @class = "form-control" })
                             </div>
                             <button type="submit" class="btn btn-default">Guardar</button>
                             <button type="reset" class="btn btn-default">Limpiar</button>

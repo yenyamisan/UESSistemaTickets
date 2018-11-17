@@ -53,7 +53,8 @@ namespace UESTicketsProject.Controllers
             var model = new NuevoTicket
             {
                 Usuarios = _usurioRepository.GetAll().ToList(),
-                Ticket = _ticketRepository.Get(ticketId)
+                Ticket = _ticketRepository.Get(ticketId),
+                Prioridades = _prioridadRepository.GetAll().ToList()
             };
             return View(model);
         }

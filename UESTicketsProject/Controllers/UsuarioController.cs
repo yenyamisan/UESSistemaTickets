@@ -107,5 +107,23 @@ namespace UESTicketsProject.Controllers
             return View(model);
         }
 
+        public ActionResult VerTicket(int id)
+        {
+            var model = new ViewTicketModel
+            {
+                Ticket = _ticketRepository.Get(id),
+                Estatuses = _estatusesRepository.GetAll().ToList(),
+                Usuarios = _usuarioRepository.GetAll().ToList(),
+                Usuario =_usuarioRepository.Get(int.Parse(Session["UId"].ToString().FromBase64())),
+                Prioridades = _prioridadRepository.GetAll().ToList()
+            };
+            return View(model);
+        }
+
+        public ActionResult ActualizarTicket(ViewTicketModel model)
+        {
+            _ticketRepository.ChangeTicketStatus(model.Ticket.Id,model.Ticket.EstadoActualId);
+            return RedirectToAction("VerTicket",new{id=model.Ticket.Id});
+        }
     }
 }
